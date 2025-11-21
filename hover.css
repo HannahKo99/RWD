@@ -1,0 +1,206 @@
+/* nav{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: lightskyblue;
+    /* align-items: center; 會造成logo大小跑掉?
+}*/
+
+/* 
+.logo img,
+.img img{
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-list{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.box{
+    height: 80px;
+    background-color: rgb(61, 178, 250);
+    text-align: center;
+    color: aliceblue;
+    padding: 20px;
+}
+
+.hotel-box{
+    position: relative;
+}
+
+.show-box li{
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    padding: 10px;
+    border: 2px solid lightblue;
+    background: wheat;
+}
+
+.hotel-box:hover .box{
+    display: block;
+}
+
+.show-box-secend{
+    display: none;
+} */ 
+
+/* ---gpt */
+/* 基本導航列 */
+
+/* ---------- NAV 基本排版 ---------- */
+nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightskyblue;
+  gap: 20px;
+}
+
+/* 左側 logo（nav > img）與右側 .img img */
+nav > img,
+.img img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* nav 主要選單 */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 每個主選單 box */
+.box {
+  position: relative; /* 重要：讓絕對定位的下拉以此為基準 */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(61, 178, 250);
+}
+
+/* 讓 <a class="hotel-text"> 整塊可 hover（不是只有文字） */
+.box > a,
+.hotel-text {
+  display: block;      /* 使整塊可 hover */
+  padding: 18px 14px;  /* 讓 a 的區域大於文字，會在 80px 高度內垂直置中 */
+  text-decoration: none;
+  color: white;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+
+/* ---------- 第一層下拉（show-box） ---------- */
+.show-box {
+  display: none;            /* 初始隱藏 */
+  position: absolute;
+  top: 100%;               /* 出現在主選單下方 */
+  left: 10px;
+  padding-top: 10px;       /* 你要的 10px 間距（不會斷層） */
+  min-width: 180px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 8px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 50;
+}
+
+/* show-box 裡面預期用 ul > li 形式，你的 li 是 .show-box-text */
+.show-box .show-box-text {
+  position: relative; /* 讓第三層以此為定位基準 */
+}
+
+/* show-box 的每一項 a（把 a 拉滿整個 li 以方便 hover） */
+.show-box .show-box-text > a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* hover 視覺 */
+.show-box .show-box-text > a:hover {
+  background: #f0f8ff;
+}
+
+/* ---------- 第二/三層（show-box-secend） ---------- */
+.show-box-secend {
+  display: none;           /* 初始隱藏 */
+  position: absolute;
+  top: 0;                  /* 與父 li 平齊 */
+  left: 100%;              /* 出現在父下拉右邊 */
+  min-width: 160px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 8px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 60;
+}
+
+/* show-box-secend 內的連結樣式 */
+.show-box-secend li a {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+.show-box-secend li a:hover {
+  background: #f0f8ff;
+}
+
+/* ---------- 關鍵：保持下拉顯示的 hover 規則 ---------- */
+/* 當滑鼠在主選單（.hotel-box）或下拉（.show-box）時都保持顯示 */
+.hotel-box:hover .show-box,
+.show-box:hover {
+  display: block;
+}
+
+/* 當滑鼠在該 .show-box-text 上或第三層本身時，第三層保持顯示 */
+.show-box-text:hover > .show-box-secend,
+.show-box-secend:hover {
+  display: block;
+}
+
+/* 可選：增加滑動/淡入過渡（非必要） */
+.show-box,
+.show-box-secend {
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  transform-origin: top left;
+}
+
+/* ---------------- 微調：避免選單抖動（增加 hover 面積） ---------------- */
+/* 讓 .show-box 的範圍稍微比項目大一點，避免滑動縫隙導致失焦 */
+.show-box .show-box-text {
+  padding-right: 8px; /* 保留小緩衝區 */
+}
+
+/* 小螢幕（簡單 RWD 建議） */
+@media (max-width: 768px) {
+  nav {
+    padding: 8px 12px;
+  }
+  .nav-list {
+    gap: 8px;
+  }
+  .box > a,
+  .hotel-text {
+    padding: 12px 10px;
+  }
+  .show-box,
+  .show-box-secend {
+    min-width: 140px;
+  }
+}

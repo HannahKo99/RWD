@@ -1,0 +1,32 @@
+section{
+    margin: 40px;
+}
+
+.card{
+
+}
+
+.box-container{
+    width: 1000px;
+    background-color: gainsboro;
+    margin: 100px auto;
+}
+
+.box{
+
+}
+
+.box1{
+
+}
+
+.box2{
+
+}
+
+@media screen and (min-width: 1024px){
+    .card{
+        background-color: #ffa;
+    }
+    
+}
