@@ -43,24 +43,6 @@ header{
   position: relative;
 }
 
-.second-menu::before{
-  content: "";
-  position: absolute;
-  top: -10px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid lightblue;
-}
-
-.second-menu::after{
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 10px;
-  left: -10px;
-  top: -10px;
-}
-
 .second-item:hover, .third-item:hover{
   background-color: lightblue;
 }
@@ -71,7 +53,7 @@ header{
 
 .third-menu{
   display: none;
-  position: absolute;
+  position: static;
   left: 100%;
   top: 20px;
   background-color: lightblue;
@@ -116,11 +98,17 @@ header{
   }
 
   .second-menu{
-    position: absolute;
+    position: static;
     display: none;
     flex-direction: column;
     background-color: #fffecd;
+  }
 
+  .third-menu{
+    position: static;
+    display: none;
+    flex-direction: column;
+    background-color: #fffecd;
   }
 
   /* 用 checkbox 控制 nav-menu 展開 */
