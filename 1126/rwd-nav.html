@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="rwd-nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+          src="https://megapx-assets.dcard.tw/images/6897a63c-22df-4af3-9a11-e562df35d4f6/640.jpeg"
+          alt="logo"
+          class="logo"
+        />
+      <!-- 隱藏勾選框 -->
+      <input type="checkbox" id="menu-toggle" />
+      <!-- label 作為按鈕，裡面放 Font Awesome icon -->
+      <label for="menu-toggle" class="hamburger-btn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          找飯店
+          <ul class="second-menu">
+            <li class="second-item">
+              北部
+              <ul class="third-menu">
+                <li class="third-item">老爺酒店</li>
+                <li class="third-item">晶華酒店</li>
+                <li class="third-item">寒舍艾美</li>
+              </ul>
+            </li>
+            <li class="second-item">
+              中部
+              <ul class="third-menu">
+                <li class="third-item">林酒店</li>
+                <li class="third-item">福華酒店</li>
+                <li class="third-item">福容飯店</li>
+              </ul>
+            </li>
+            <li class="second-item">
+              南部
+              <ul class="third-menu">
+                <li class="third-item">夏都飯店</li>
+                <li class="third-item">長榮酒店</li>
+                <li class="third-item">金典飯店</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          找機票
+          <ul class="second-menu">
+            <li class="second-item">美國</li>
+            <li class="second-item">日本</li>
+            <li class="second-item">韓國</li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          找景點
+          <ul class="second-menu">
+            <li class="second-item">北部</li>
+            <li class="second-item">中部</li>
+            <li class="second-item">南部</li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          找美食
+          <ul class="second-menu">
+            <li class="second-item">北部</li>
+            <li class="second-item">中部</li>
+            <li class="second-item">南部</li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+  </body>
+</html>
