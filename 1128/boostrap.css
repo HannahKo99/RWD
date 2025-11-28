@@ -1,0 +1,17 @@
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  margin: 100px auto;
+  max-width: 1200px;
+  background-color: gray;
+}
+
+.card img{
+  aspect-ratio: 4/3;
+}
+
+.btn{
+  display: block;
+  justify-self: end;
+}

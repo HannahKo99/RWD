@@ -1,0 +1,133 @@
+.section1{
+  width: 1000px;
+  height: 300px;
+  margin: 100px auto;
+  background-color: gray;
+}
+
+.mover{
+  width: 300px;
+  height: 300px;
+  background-color: #fa0;
+  animation-name: move;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes move{
+  0%{
+    border-radius: 10%;
+    margin-left: 0;
+  }
+  30%{
+    border-radius: 40%;
+    background-color: #fa0;
+  }
+  60%{
+    border-radius: 70%;
+    background-color: #0af;
+  }
+  100%{
+    border-radius: 100%;
+    margin-left: calc(100% - 300px);
+    background-color: #aaf;
+  }
+}
+/* -------------- */
+.container{
+  width: 950px;
+  height: auto;
+  margin: 100px auto;
+  background-color: white;
+  border: 8px solid purple;
+  display: flex;
+}
+
+.box
+{
+  width: 200px;
+  height: 200px;
+  background-color: purple;
+  margin: 15px 0 15px 15px ;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(4, 60px);
+}
+
+.cube{
+  width: 60px;
+  height: 60px;
+  background-color: plum;
+  animation: loading-shake 5s infinite;
+}
+
+
+.cube1,
+.cube4{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.cube2,
+.cube5{
+  grid-column: 2 / 3;
+  grid-row: 2/ 3;
+}
+.cube3,
+.cube6{
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+
+@keyframes loading-shake{
+ 0%{
+  width: 60px;
+  height: 60px;  
+}
+ 25%{
+  height: 180px;
+  width: 60px;
+ }
+ 50%{
+  width: 60px;
+  height: 60px;
+ }
+ 75%{
+  width: 180px;
+  height: 60px;
+ }
+ 100%{
+  width: 60px;
+  height: 60px;
+ }
+}
+
+.cube2{
+  animation: shake2 5s infinite;
+}
+
+@keyframes shake2{
+ 0%{
+    margin-left: 0%;
+ }
+ 25%{
+  height: 180px;
+  width: 60px;
+  margin-bottom: calc();
+ }
+ 50%{
+  height: 60px;
+  width: 60px;
+ }
+ 75%{
+  width: 180px;
+  height: 60px;
+ }
+ 100%{
+  width: 60px;
+  height: 60px;
+ }
+}
